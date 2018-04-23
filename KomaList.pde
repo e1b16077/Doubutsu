@@ -30,10 +30,9 @@ class KomaList {
     AbstractKoma koma = this.getKomaFromPlaceByTeam(x, y, gs.turn);
     if (koma != null) koma.kStat.selected=true;
   }
-
-  AbstractKoma getKomaFromPlaceByTeam(int x, int y, int team) {
+  AbstractKoma getKomaFromPlace(int x, int y) {
     for (AbstractKoma k : this.komaArray) {
-      if (team==k.team && x == k.x && y == k.y && k.kStat.active) return k;
+      if (x == k.x && y == k.y && k.kStat.active) return k;
     }
     return null;
   }
